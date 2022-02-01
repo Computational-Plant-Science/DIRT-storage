@@ -4,8 +4,7 @@ public: True
 doi:
   - 10.1002/ppp3.10130
 image: docker://computationalplantscience/dirt-storage
-commands: /opt/DIRT-storage/shim.sh
-logo: dirt_logo.jpg
+commands: python /opt/code/hairyroots.py -i $INPUT --Diameter -- Blunder
 params:
   - name: Diameter
     type: number
