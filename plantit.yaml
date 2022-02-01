@@ -3,8 +3,8 @@ author: Alexander Bucksch and Natalie Busener
 public: True
 doi:
   - 10.1002/ppp3.10130
-image: docker://computationalplantscience/dirt_storage
-commands: /opt/DIRT/shim.sh
+image: docker://computationalplantscience/dirt-storage
+commands: /opt/DIRT-storage/shim.sh
 logo: dirt_logo.jpg
 params:
   - name: Diameter
