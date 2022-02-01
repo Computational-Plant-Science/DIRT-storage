@@ -1,0 +1,35 @@
+name: DIRT/storage
+author: Alexander Bucksch and Natalie Busener
+public: True
+doi:
+  - 10.1002/ppp3.10130
+image: docker://computationalplantscience/dirt_storage
+commands: /opt/DIRT/shim.sh
+logo: dirt_logo.jpg
+params:
+  - name: Diameter
+    type: number
+    default: 50.8
+    step: 0.1
+  - name: Blunder
+    type: number
+    default: 4000
+input:
+  kind: files
+  filetypes:
+    - jpg
+    - png
+    - tif
+    - tiff
+output:
+  include:
+    patterns:
+      - csv
+      - yml
+      - png
+      - jpg
+jobqueue:
+  walltime: "00:30:00"
+  memory: "2GB"
+  processes: 1
+  cores: 1
