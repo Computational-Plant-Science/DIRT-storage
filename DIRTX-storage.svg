@@ -7,43 +7,75 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="DIRTX-storage.svg"
+   inkscape:export-filename="/Users/bucksch/Desktop/DIRTX-storage.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.4042969"
+     inkscape:cx="256.35605"
+     inkscape:cy="255.64395"
+     inkscape:window-width="1283"
+     inkscape:window-height="892"
+     inkscape:window-x="34"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2" />
   <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:64px;line-height:1.25;font-family:sans-serif"
-       x="139.57162"
-       y="227.15994"
-       id="text1200"><tspan
+       style="font-size:97.6499px;line-height:1.25;font-family:sans-serif;stroke-width:1.52578"
+       x="22.734949"
+       y="242.99623"
+       id="text1200"
+       transform="scale(0.94392282,1.0594087)"><tspan
+         sodipodi:role="line"
          id="tspan1198"
-         x="139.57162"
-         y="227.15994"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">DIRT\</tspan></text>
+         x="22.734949"
+         y="242.99623"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:1.52578">DIRT\</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:132.861px;line-height:1.25;font-family:sans-serif;white-space:pre;inline-size:98.611;stroke-width:1.55697"
        x="325.03873"
        y="240.95126"
        id="text4886"
-       transform="matrix(1.1804901,0.16112345,-0.18539427,1.3576901,-61.032685,-76.091447)"><tspan
+       transform="matrix(1.64141,0.0696474,-0.08000611,1.9461754,-285.46013,-126.82643)"><tspan
          x="325.03873"
          y="240.95126"
-         id="tspan16587"><tspan
+         id="tspan17709"><tspan
            style="font-style:italic;-inkscape-font-specification:'sans-serif Italic';fill:#d7d117"
-           id="tspan16585">X</tspan></tspan></text>
+           id="tspan17707">X</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:32px;line-height:1.25;font-family:sans-serif"
-       x="159.51044"
-       y="262.76495"
-       id="text15209"><tspan
+       style="font-size:48.825px;line-height:1.25;font-family:sans-serif;stroke-width:1.52578"
+       x="53.157196"
+       y="297.32166"
+       id="text15209"
+       transform="scale(0.94392282,1.0594087)"><tspan
+         sodipodi:role="line"
          id="tspan15207"
-         x="159.51044"
-         y="262.76495"
-         style="font-size:32px">Storage</tspan></text>
+         x="53.157196"
+         y="297.32166"
+         style="font-size:48.825px;stroke-width:1.52578">Storage</tspan></text>
   </g>
 </svg>
