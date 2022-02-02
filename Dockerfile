@@ -18,7 +18,8 @@ COPY . /opt/DIRT-storage
 # RUN pacman -S --noconfirm gcc git python-pip && \
 RUN cd /opt/DIRT-storage
     # sed -i 's#/usr/local/bin/zbarimg#/usr/bin/zbarimg#' /opt/DIRT/DirtOcr/__init__.py && \
-RUN pip3 install --upgrade pip
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip
 RUN pip3 install -r /opt/DIRT-storage/requirements.txt
     # chmod +x /opt/DIRT/shim.sh
 
