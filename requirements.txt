@@ -1,5 +1,5 @@
 wheel==0.36.2
-numpy==1.19.2
+numpy>=1.21
 scipy==1.5.2
 scikit-image==0.15
 matplotlib>=3.0
