@@ -10,5 +10,3 @@ RUN cd /opt/DIRT-storage && \
 
 ENV LC_ALL=C
 ENV DISPLAY=:1
-
-CMD python /opt/DIRT-storage/storage.py "$@"
