@@ -1,3 +1,4 @@
+FROM ubuntu:bionic
 LABEL maintainer="Alexander Bucksch"
 
 # RUN apt-get update && \
