@@ -19,7 +19,8 @@ COPY . /opt/DIRT-storage
 RUN cd /opt/DIRT-storage
     # sed -i 's#/usr/local/bin/zbarimg#/usr/bin/zbarimg#' /opt/DIRT/DirtOcr/__init__.py && \
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip
+    DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev
 RUN pip3 install -r /opt/DIRT-storage/requirements.txt
     # chmod +x /opt/DIRT/shim.sh
 
