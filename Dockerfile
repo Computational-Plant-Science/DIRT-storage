@@ -16,10 +16,10 @@ LABEL maintainer="Alexander Bucksch"
 COPY . /opt/DIRT-storage
 
 # RUN pacman -S --noconfirm gcc git python-pip && \
-RUN cd /opt/DIRT-storage && \
+RUN cd /opt/DIRT-storage
     # sed -i 's#/usr/local/bin/zbarimg#/usr/bin/zbarimg#' /opt/DIRT/DirtOcr/__init__.py && \
-    pip3 install --upgrade pip && \
-    pip3 install -r /opt/DIRT-storage/requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install -r /opt/DIRT-storage/requirements.txt
     # chmod +x /opt/DIRT/shim.sh
 
 ENV LC_ALL=C
