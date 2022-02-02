@@ -9,4 +9,4 @@ RUN cd /opt/DIRT-storage && \
     pip install -r /opt/DIRT-storage/requirements.txt
 
 ENV LC_ALL=C
-ENV DISPLAY=:1
+#ENV DISPLAY=:1
