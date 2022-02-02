@@ -1,6 +1,6 @@
 wheel==0.36.2
-zlib==1.2.11
+zlib>=1.1.4
 numpy==1.19.2
 scipy==1.5.2
 scikit-image==0.15
-matplotlib==3.1.1
+matplotlib>=3.0
