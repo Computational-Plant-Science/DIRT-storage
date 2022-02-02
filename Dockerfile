@@ -20,8 +20,8 @@ RUN cd /opt/DIRT-storage
     # sed -i 's#/usr/local/bin/zbarimg#/usr/bin/zbarimg#' /opt/DIRT/DirtOcr/__init__.py && \
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip && \
-    DEBIAN_FRONTEND=noninteractive apk --update add libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev curl
-RUN apk add jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
+    DEBIAN_FRONTEND=noninteractive apt-get install -y libjpeg-dev && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y zlib1g-dev
 RUN pip3 install Pillow
 RUN pip3 install -r /opt/DIRT-storage/requirements.txt
     # chmod +x /opt/DIRT/shim.sh
