@@ -147,7 +147,8 @@ print ('blunder: min. number of pixels in connected components (standard = 4000)
 print ('------------------------------------------------------------------------')
 print ('Publication to cite: https://doi.org/10.1002/ppp3.10130')
 print ('------------------------------------------------------------------------')
-path= sys.argv[1]
+f= sys.argv[1]
+path=os.path.dirname(os.path.abspath(f))
 mm= float(sys.argv[2])
 skipIt=4000
 try:
@@ -155,7 +156,7 @@ try:
 except:
 	pass
 
-fileList=glob.glob(path+'/*tubers*')
+#fileList=glob.glob(path+'/*tubers*')
 diameter=0
 volumeArr=[]
 lengthArr=[]
@@ -163,59 +164,57 @@ diameterArr=[]
 tuberID=[]
 imgName=[]
 	
-for fdx,f in enumerate(fileList):
-	
-	image = io.imread(f,as_gray=True, plugin="matplotlib")
-	# apply threshold
-	thresh = threshold_otsu(image)
-	bw = closing(image > thresh, square(3))
-	
-	# remove artifacts connected to image border
-	cleared = bw.copy()
-	clear_border(cleared)
-	
-	# label image regions
-	label_image = label(cleared)
-	image_label_overlay = label2rgb(label_image, image=image)
-	regions = regionprops(label_image)
-	for i in regions:
-		if i.area < skipIt:
-			continue
-		elif i.eccentricity < 0.5: # Circle
-			diameter=i.equivalent_diameter
-			print ('Diameter of Circle:'+str(diameter))
-			
-	for i in regions:
-		if i.area < skipIt:
-			continue
-		elif i.eccentricity < 0.8: # Circle
-			continue
-		elif np.linalg.norm(i.orientation) < 0.7: # Tag
-			continue
-		else:
-			extractTraits(label_image, i.label, diameter, mm)
-			tuberID.append(str(i.label))
-			imgName.append(f)
-	plt.figure(1)
-	plt.clf()
-	fig, ax = plt.subplots(ncols=1, nrows=1, figsize=(6, 6))
-	ax.imshow(image_label_overlay) 
-	for region in regions:
-		#skip small images
-		if region.area < skipIt:
-			continue
-		elif region.eccentricity < 0.8: # Circle
-			continue
-		elif np.linalg.norm(region.orientation) < 0.7: # Tag
-			continue
-		# draw rectangle around segmented coins
-		minr, minc, maxr, maxc = region.bbox
-		rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
-								  fill=False, edgecolor='red', linewidth=2)
-		ax.add_patch(rect)
-	print ("save segmentation")    
-	plt.savefig(f+'segmentation.jpg')
-	plt.close()
+image = io.imread(f,as_gray=True, plugin="matplotlib")
+# apply threshold
+thresh = threshold_otsu(image)
+bw = closing(image > thresh, square(3))
+
+# remove artifacts connected to image border
+cleared = bw.copy()
+clear_border(cleared)
+
+# label image regions
+label_image = label(cleared)
+image_label_overlay = label2rgb(label_image, image=image)
+regions = regionprops(label_image)
+for i in regions:
+	if i.area < skipIt:
+		continue
+	elif i.eccentricity < 0.5: # Circle
+		diameter=i.equivalent_diameter
+		print ('Diameter of Circle:'+str(diameter))
+
+for i in regions:
+	if i.area < skipIt:
+		continue
+	elif i.eccentricity < 0.8: # Circle
+		continue
+	elif np.linalg.norm(i.orientation) < 0.7: # Tag
+		continue
+	else:
+		extractTraits(label_image, i.label, diameter, mm)
+		tuberID.append(str(i.label))
+		imgName.append(f)
+plt.figure(1)
+plt.clf()
+fig, ax = plt.subplots(ncols=1, nrows=1, figsize=(6, 6))
+ax.imshow(image_label_overlay) 
+for region in regions:
+	#skip small images
+	if region.area < skipIt:
+		continue
+	elif region.eccentricity < 0.8: # Circle
+		continue
+	elif np.linalg.norm(region.orientation) < 0.7: # Tag
+		continue
+	# draw rectangle around segmented coins
+	minr, minc, maxr, maxc = region.bbox
+	rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
+							  fill=False, edgecolor='red', linewidth=2)
+	ax.add_patch(rect)
+print ("save segmentation")    
+plt.savefig(f+'segmentation.jpg')
+plt.close()
 
 allValues=[['Length (mean)','Length (std)','Volume (mean)','Volume (std)', 'Diameter (mean)', 'Diameter (std)'],
 			[np.average(lengthArr), np.std(lengthArr), np.average(volumeArr), np.std(volumeArr, ddof=1), np.average(diameterArr), np.std(diameterArr, ddof=1)]]
