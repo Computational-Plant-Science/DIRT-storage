@@ -4,7 +4,7 @@ public: True
 doi:
   - 10.1002/ppp3.10130
 image: docker://computationalplantscience/dirt-storage
-commands: python3 /opt/code/storage.py $INPUT $DIAMETER $BLUNDER
+commands: python3 /opt/DIRT-storage/storage.py $INPUT $DIAMETER $BLUNDER
 logo: DIRTX-storage.png
 params:
   - name: Diameter
