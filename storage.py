@@ -218,12 +218,12 @@ plt.close()
 
 allValues=[['Length (mean)','Length (std)','Volume (mean)','Volume (std)', 'Diameter (mean)', 'Diameter (std)'],
 			[np.average(lengthArr), np.std(lengthArr), np.average(volumeArr), np.std(volumeArr, ddof=1), np.average(diameterArr), np.std(diameterArr, ddof=1)]]
-with open(path+'/all.csv', 'w') as csvFile:
+with open(os.path.dirname(path)+'/all.csv', 'w') as csvFile:
 	writer = csv.writer(csvFile, delimiter=',')
 	writer.writerows(allValues)
 
 header=['Image','Tuber ID','Length','Volume', 'Diameter']
-with open(path+'/allSingle.csv', 'w') as csvFile:
+with open(os.path.dirname(path)+'/allSingle.csv', 'w') as csvFile:
 	writer = csv.writer(csvFile, delimiter=',')
 	writer.writerow(header)
 	for idx in range(len(lengthArr)):
