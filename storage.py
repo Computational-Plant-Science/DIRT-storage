@@ -45,7 +45,7 @@ import csv
 import os
 import sys
 import glob
-
+<
 '''
 Funtions
 '''
@@ -149,6 +149,11 @@ print ('Publication to cite: https://doi.org/10.1002/ppp3.10130')
 print ('------------------------------------------------------------------------')
 f= sys.argv[1]
 path=os.path.dirname(os.path.abspath(f))
+print ('---------')
+print (f)
+print (path)
+print (os.path.dirname(f))
+print ('---------')
 mm= float(sys.argv[2])
 skipIt=4000
 try:
